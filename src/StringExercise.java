@@ -1,7 +1,7 @@
 public class StringExercise {
     public static void main(String[] args) {
         String message;
-        message = "Check \"this\" out!, \"s inside of \"s!";
+        message = "In windows, the main drive is usually C:\\";
         System.out.println(message);
     }
 }
