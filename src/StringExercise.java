@@ -1,7 +1,7 @@
 public class StringExercise {
     public static void main(String[] args) {
         String message;
-        message = "In windows, the main drive is usually C:\\";
+        message = "I can do backslashes \\, double backslashes \\\\, and the amazing triple backslash \\\\\\!";
         System.out.println(message);
     }
 }
