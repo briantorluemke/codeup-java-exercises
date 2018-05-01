@@ -5,10 +5,8 @@ public class ControlFlowExercises {
 //            System.out.println(i);
 //            i++;
 //        }
-        long i = 2;
-        do {
+        for (long i = 2; i <= 1000000; i *= i) {
             System.out.println(i);
-            i = i*i;
-        } while (i<=1000000);
+        }
     }
 }
