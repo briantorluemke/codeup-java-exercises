@@ -5,11 +5,18 @@ public class Circle {
 
     public Circle(double radius) {
         System.out.println("Creating your circle.");
-        System.out.println("                    .");
-        System.out.println("                    .");
-        System.out.println("                    .");
-        System.out.println("                    .");
-        System.out.println("                    .");
+        System.out.println("         ***\n" +
+                "     *         *\n" +
+                "   *             *\n" +
+                "  *               *\n" +
+                " *                 *\n" +
+                " *         --------*\n" +
+                " *            ("+radius+")*\n" +
+                " *                 *\n" +
+                "  *               *\n" +
+                "   *             *\n" +
+                "     *         *\n" +
+                "         ***");
         System.out.println("Circle created!");
         this.radius = radius;
     }
