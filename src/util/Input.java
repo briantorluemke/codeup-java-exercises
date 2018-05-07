@@ -9,7 +9,7 @@ public class Input {
         System.out.println("Type a String: ");
         String input = scanner.next();
         System.out.println(input);
-        return input;
+        return null;
     }
 
     public boolean yesNo() {
@@ -23,7 +23,6 @@ public class Input {
             System.out.println("Oops, I'm not sure what you mean by that.. try again!");
             yesNo();
         }
-        System.out.println(val);
         return val;
     }
 
