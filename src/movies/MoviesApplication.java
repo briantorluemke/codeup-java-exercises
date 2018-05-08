@@ -41,14 +41,13 @@ public class MoviesApplication {
                     "Enter your choice: ");
             int select = sc.nextInt();
             switch (select) {
-                case 0 :
+                case 0:
                     keepGoing = false;
                     break;
-                case 1 :
+                case 1:
                     movieList();
                     break;
-                case 2 :
-                    System.out.println("Figures. A weeb. Fine, here you go.");
+                case 2:
                     movieGenre(weeb);
                     break;
                 case 3:
