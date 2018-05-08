@@ -9,6 +9,7 @@ public class Rectangle {
     public Rectangle(int width, int length) {
         this.width = width;
         this.length = length;
+        System.out.println("Created a box with length: "+length+" and width: "+width);
     }
 
     public int getPerimeter() {
