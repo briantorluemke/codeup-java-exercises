@@ -1,6 +1,5 @@
 package movies;
 import util.Input;
-
 import java.util.Scanner;
 
 public class MoviesApplication {
