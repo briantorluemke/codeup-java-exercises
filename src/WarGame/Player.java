@@ -1,34 +1,23 @@
 package WarGame;
-import java.util.Scanner;
 import util.Input;
 
 public class Player {
-    int gamesWon;
-    public String playerName;
     public static Card[] cards = CardsArray.getAllCards();
     public Card[] playerDeck = new Card[25];
     public Card[] aiDeck = new Card[25];
-    private Scanner sc = new Scanner(System.in);
     public boolean gameActive = true;
     Input input = new Input();
     public int playerScore = 0;
     public int aiScore = 0;
 
-    public String playerName() {
-        System.out.print("What is your player name? Type here: ");
-        playerName = sc.next();
-        System.out.println("Welcome, "+playerName+"!");
-        return playerName;
-    }
-
-    public void shuffle() {
+    public void shuffle(Card[] chosen) {
         Card temp;
         System.out.println("Shuffling the deck...");
-        for (int i = 0; i < cards.length; i++) {
-            int index = (int)(Math.random() * cards.length);
-            temp = cards[i];
-            cards[i] = cards[index];
-            cards[index] = temp;
+        for (int i = 0; i < chosen.length; i++) {
+            int index = (int)(Math.random() * chosen.length);
+            temp = chosen[i];
+            cards[i] = chosen[index];
+            chosen[index] = temp;
         }
         System.out.println("Deck shuffled.");
     }
@@ -64,7 +53,7 @@ public class Player {
             System.out.print("The deck has not been shuffled yet. Shuffle deck?\n");
             boolean user = input.yesNo();
             if (user) {
-                shuffle();
+                shuffle(cards);
             } else {
                 System.out.println("Fine. You're not playing then.");
                 gameActive = false;
@@ -84,6 +73,12 @@ public class Player {
             if (user3) {
                 readDeck(playerDeck);
                 System.out.println("^^^^View your deck above^^^^^");
+                System.out.println("Would you like to shuffle your deck?");
+                boolean user8 = input.yesNo();
+                if (user8) {
+                    shuffle(playerDeck);
+                    readDeck(playerDeck);
+                }
             }
             System.out.println("Ready to run through the rounds?");
             boolean user4 = input.yesNo();
