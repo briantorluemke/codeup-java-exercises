@@ -7,7 +7,7 @@ public class GradesApplication {
     public static void main(String[] args) {
         HashMap<String, Student> students = new HashMap<>();
         Scanner sc = new Scanner(System.in);
-        boolean cont = true;
+        boolean cont;
 
         students.put("dug", new Student("Brian"));
         students.put("shake", new Student("Jake"));
@@ -25,11 +25,10 @@ public class GradesApplication {
         students.get("tryingyeti").addGrade(87);
         students.get("tryingyeti").addGrade(37);
 
-        Student dug = students.get("dug");
-        Student shake = students.get("shake");
-        Student tryingyeti = students.get("tryingyeti");
-
         do {
+            Student dug = students.get("dug");
+            Student shake = students.get("shake");
+            Student tryingyeti = students.get("tryingyeti");
             System.out.print("Welcome!" +
                     "\n" +
                     "\n" +

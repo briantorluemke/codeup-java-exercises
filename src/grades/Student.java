@@ -12,7 +12,6 @@ public class Student {
     }
     // returns the student's name
     public String getName() {
-        System.out.println(this.name);
         return this.name;
     }
     // adds the given grade to the grades property
@@ -25,7 +24,6 @@ public class Student {
         for (double grade : this.grades) {
             sum += grade;
         }
-        System.out.println(sum/grades.size());
         return sum/grades.size();
     }
 }
