@@ -1,6 +1,6 @@
 package shapes;
 
-public class Square extends Quadrilateral implements Measurable{
+public class Square extends Quadrilateral{
     public Square(int side) {
         super(side, side);
     }
@@ -21,8 +21,13 @@ public class Square extends Quadrilateral implements Measurable{
     }
 
     @Override
-    void setWidth() {
+    public void setLength(double width) {
+        this.width = width;
+    }
 
+    @Override
+    public void setWidth(double length) {
+        this.length = length;
     }
 
     @Override
@@ -30,8 +35,4 @@ public class Square extends Quadrilateral implements Measurable{
         return width;
     }
 
-    @Override
-    public void setLength() {
-
-    }
 }
