@@ -27,48 +27,78 @@ public class Input {
     }
 
     public int getInt(int min, int max) {
-        System.out.println("Type a number between "+min+" and "+max+": ");
-        int input = scanner.nextInt();
-        if (input > max) {
-            System.out.println("Try again... remember the numbers to choose from are "+min+" and "+max);
-            getInt(min, max);
-        } else if (input < min) {
-            System.out.println("Try again... remember the numbers to choose from are "+min+" and "+max);
-            getInt(min, max);
-        } else {
-            System.out.println(input);
-            return input;
+        int input2;
+        try {
+            System.out.println("Type a number between " + min + " and " + max + ": ");
+            String input = scanner.next();
+            input2 = Integer.valueOf(input);
+            System.out.println("Testing the value of "+input2+"...");
+            if (input2 > max) {
+                System.out.println("Try again... remember the numbers to choose from are " + min + " and " + max);
+                getInt(min, max);
+            } else if (input2 < min) {
+                System.out.println("Try again... remember the numbers to choose from are " + min + " and " + max);
+                getInt(min, max);
+            } else {
+                System.out.println(input2+" is a working integer!");
+                return input2;
+            }
+            System.out.println(input2);
+            return input2;
+        } catch (NumberFormatException e) {
+            System.out.println("You must not have entered a number. Try again.");
+            return getInt(min, max);
         }
-        return input;
     }
 
     public int getInt() {
-        System.out.println("Type an integer: ");
-        int input = scanner.nextInt();
-        System.out.println(input);
-        return input;
+        int input2;
+        try {
+            System.out.println("Type an integer: ");
+            String input = scanner.next();
+            input2 = Integer.valueOf(input);
+            System.out.println(input2);
+            return input2;
+        } catch (NumberFormatException e) {
+            System.out.println("You must not have entered a number. Try again.");
+            return getInt();
+        }
     }
 
     public double getDouble(double min, double max) {
-        System.out.println("Type a decimal number between "+min+" and "+max+": ");
-        double input = scanner.nextDouble();
-        if (input > max) {
-            System.out.println("Try again... remember the numbers to choose from are "+min+" and "+max);
-            getDouble(min, max);
-        } else if (input < min) {
-            System.out.println("Try again... remember the numbers to choose from are "+min+" and "+max);
-            getDouble(min, max);
-        } else {
-            System.out.println(input);
-            return input;
+        double input2;
+        try {
+            System.out.println("Type a decimal number between " + min + " and " + max + ": ");
+            String input = scanner.next();
+            input2 = Double.valueOf(input);
+            if (input2 > max) {
+                System.out.println("Try again... remember the numbers to choose from are " + min + " and " + max);
+                getDouble(min, max);
+            } else if (input2 < min) {
+                System.out.println("Try again... remember the numbers to choose from are " + min + " and " + max);
+                getDouble(min, max);
+            } else {
+                System.out.println(input2);
+                return input2;
+            }
+            return input2;
+        } catch (NumberFormatException e) {
+            System.out.println("You must not have entered a double. Try again.");
+            return getDouble(min, max);
         }
-        return input;
     }
 
     public double getDouble() {
-        System.out.println("Type a decimal: ");
-        double input = scanner.nextDouble();
-        System.out.println(input);
-        return input;
+        double input2;
+        try {
+            System.out.println("Type a decimal: ");
+            String input = scanner.next();
+            System.out.println(input);
+            input2 = Double.valueOf(input);
+            return input2;
+        } catch (NumberFormatException e) {
+            System.out.println("You must not have entered a double. Try again.");
+            return getDouble();
+        }
     }
 }

@@ -5,6 +5,9 @@ import java.util.Scanner;
 
 public class GradesApplication {
     public static void main(String[] args) {
+        getInfo();
+    }
+    private static void getInfo() {
         HashMap<String, Student> students = new HashMap<>();
         Scanner sc = new Scanner(System.in);
         boolean cont;
@@ -24,7 +27,6 @@ public class GradesApplication {
         students.get("tryingyeti").addGrade(64);
         students.get("tryingyeti").addGrade(87);
         students.get("tryingyeti").addGrade(37);
-
         do {
             Student dug = students.get("dug");
             Student shake = students.get("shake");
@@ -41,11 +43,11 @@ public class GradesApplication {
                     ">");
             String choice = sc.next();
             if (choice.equalsIgnoreCase("dug")) {
-                System.out.println("You selected "+dug.getName()+", who has a grade average of "+dug.getGradeAverage());
+                System.out.println("You selected " + dug.getName() + ", who has a grade average of " + dug.getGradeAverage());
             } else if (choice.equalsIgnoreCase("shake")) {
-                System.out.println("You selected "+shake.getName()+", who has a grade average of "+shake.getGradeAverage());
+                System.out.println("You selected " + shake.getName() + ", who has a grade average of " + shake.getGradeAverage());
             } else if (choice.equalsIgnoreCase("tryingyeti")) {
-                System.out.println("You selected "+tryingyeti.getName()+", who has a grade average of "+tryingyeti.getGradeAverage());
+                System.out.println("You selected " + tryingyeti.getName() + ", who has a grade average of " + tryingyeti.getGradeAverage());
             } else {
                 System.out.print("That's not one of our students... try again.\n" +
                         ">");
@@ -56,3 +58,5 @@ public class GradesApplication {
         } while (cont);
     }
 }
+
+
